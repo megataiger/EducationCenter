@@ -23,8 +23,8 @@ public class Player {
     }
 
     public void switchStation() {
-        if (stationNumber != 1) {
-            stationNumber = 1;
+        if (stationNumber < playSongList.size()-1) {
+            stationNumber++;
         } else {
             stationNumber = 0;
         }
