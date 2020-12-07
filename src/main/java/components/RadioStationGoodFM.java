@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 import java.util.List;
 
-@Component("station2")
+@Component
 public class RadioStationGoodFM implements PlaySong {
 
     private List<String> musicChart = Arrays.asList("song1", "song2");
