@@ -1,15 +1,15 @@
-import components.Player;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        Player player = (Player)  context.getBean("player");
+    public static void main(String[] args) throws SQLException {
+        DataBase.addStuff();
+        DataBase.addStuff();
+        DataBase.addStuff();
 
-        player.playMusic();
-        player.switchStation();
-        player.switchStation();
-        player.switchStation();
+        DataBase.getStuff();
+
+        System.out.println();
+
+        DataBase.getStuffById(1);
     }
 }
