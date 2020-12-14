@@ -1,15 +1,19 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        DataBase.addStuff();
-        DataBase.addStuff();
-        DataBase.addStuff();
+        try (Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "ilya", "")) {
+            DataBase.addStuff(connection);
+            DataBase.addStuff(connection);
+            DataBase.addStuff(connection);
 
-        DataBase.getStuff();
+            DataBase.getStuff(connection);
 
-        System.out.println();
+            System.out.println();
 
-        DataBase.getStuffById(1);
+            DataBase.getStuffById(connection,1);
+        }
     }
 }
